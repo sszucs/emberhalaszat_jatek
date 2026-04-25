@@ -3,48 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lk 5 – Felnőtt feldolgozó modul</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Lk 5 – Interaktív Élmény (2.1 UI)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <main class="container">
-    <header>
-      <h1>Lukács 5:1–11 – Mélyebb értelmezés</h1>
-      <p class="subtitle">Felnőtteknek szóló feldolgozó modul – nem játék, hanem vezetett reflexió</p>
-    </header>
+<div class="bg">
+  <div class="wave w1"></div>
+  <div class="wave w2"></div>
+  <div class="wave w3"></div>
+</div>
 
-    <section id="stage-sequence" class="card">
-      <h2>1. A történet belső logikája</h2>
-      <p>Rendezd sorrendbe a történet eseményeit. A rendszer nem siettet, és nem pontoz.</p>
-      <div id="sequenceList" class="sequence"></div>
-      <div id="sequenceFeedback" class="feedback"></div>
-    </section>
+<div class="app">
+<header class="topbar">
+  <h1>Lukács 5:1–11</h1>
+  <nav>
+    <button data-tab="story">Történet</button>
+    <button data-tab="fish">Emberhalász</button>
+    <button data-tab="learn">Feldolgozás</button>
+  </nav>
+</header>
 
-    <section id="stage-turning" class="card">
-      <h2>2. Hol történik az igazi fordulat?</h2>
-      <p>Válaszd ki azt a pontot, ahol szerinted a történet iránya eldől.</p>
-      <div id="turningOptions" class="options"></div>
-      <div id="turningReflection" class="reflection"></div>
-    </section>
+<main>
+<section id="story" class="tab active">
+  <div class="card scene active">
+    <p class="eyebrow">Lk 5:1</p>
+    <p class="text">A sokaság Jézushoz tódult, és hallgatta Isten igéjét.</p>
+  </div>
+  <div class="card scene">
+    <p class="eyebrow">Lk 5:2</p>
+    <p class="text">A parton két hajó állt, a halászok hálóikat mosták.</p>
+  </div>
+  <div class="card scene">
+    <p class="eyebrow">Lk 5:4</p>
+    <p class="text">Jézus megszólította Pétert: „Evezz a mélyre.”</p>
+    <div class="choices">
+      <button class="bad">Most nincs értelme</button>
+      <button class="bad">Egész éjjel próbáltuk</button>
+      <button class="good">A te szavadra</button>
+    </div>
+    <p class="hint"></p>
+  </div>
+  <div class="card scene">
+    <p class="eyebrow">Lk 5:6–8</p>
+    <p class="text">A hálók megteltek. Péter megrendült.</p>
+  </div>
+  <div class="card scene">
+    <p class="eyebrow">Lk 5:10–11</p>
+    <p class="text">„Ne félj… mostantól embereket fogsz halászni.”</p>
+  </div>
+  <div class="controls">
+    <button id="prev">◀</button>
+    <button id="next">▶</button>
+  </div>
+</section>
 
-    <section id="stage-personal" class="card">
-      <h2>3. Hol tartasz most ebben a történetben?</h2>
-      <p>Ez nem értékelés. Ez önreflexió.</p>
-      <div id="personalOptions" class="options"></div>
-      <div id="personalReflection" class="reflection"></div>
-    </section>
+<section id="fish" class="tab">
+  <div class="card">
+    <p class="text">Húzd az igét ahhoz az emberhez, akit megszólít.</p>
+    <div class="fish-grid">
+      <div class="verse" draggable="true">Ne félj</div>
+      <div class="person">Félelemmel élő</div>
+      <div class="person">Kereső</div>
+    </div>
+    <p id="fishMsg" class="hint"></p>
+  </div>
+</section>
 
-    <section id="stage-application" class="card">
-      <h2>4. Mit jelent a követés ma?</h2>
-      <p>Gondold végig az alábbi élethelyzeteket. Nem kérünk választ – csak megállást.</p>
-      <div class="scenario">Egy biztonságos, de kiüresedett munka – vagy kockázat egy belső elhívás miatt.</div>
-      <div class="scenario">Szolgálatban való kiégés – vagy pihenés Jézus szavára.</div>
-      <div class="scenario">Hallgatás – vagy megszólalás vállalt következményekkel.</div>
-      <p class="closing">„A történet vége nem lezárás. Hanem irány.”</p>
-    </section>
-  </main>
+<section id="learn" class="tab">
+  <div class="card">
+    <p class="text">Rendezd sorrendbe a történet ívét.</p>
+    <div id="order" class="dd"></div>
+    <p id="orderMsg" class="hint"></p>
+  </div>
+  <div class="card">
+    <p class="text">Mit hagy ott Péter?</p>
+    <div class="dd split">
+      <div id="left">
+        <div draggable="true">Biztonság</div>
+        <div draggable="true">Kontroll</div>
+        <div draggable="true">Megélhetés</div>
+      </div>
+      <div id="right">Otthagyja</div>
+    </div>
+  </div>
+</section>
+</main>
+</div>
 
-  <script src="js/script.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
