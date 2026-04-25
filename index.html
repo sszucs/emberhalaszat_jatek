@@ -2,95 +2,245 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lk 5 – Interaktív Élmény (2.1 UI)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Emberhalászat 2.1 – modern, mobilbarát bibliai játékcsomag Lukács 5:1–11 alapján." />
+  <meta name="theme-color" content="#0b7cff" />
+  <title>Emberhalászat 2.1 – Lukács 5:1–11</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<div class="bg">
-  <div class="wave w1"></div>
-  <div class="wave w2"></div>
-  <div class="wave w3"></div>
-</div>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+  <div class="bg-grid"></div>
 
-<div class="app">
-<header class="topbar">
-  <h1>Lukács 5:1–11</h1>
-  <nav>
-    <button data-tab="story">Történet</button>
-    <button data-tab="fish">Emberhalász</button>
-    <button data-tab="learn">Feldolgozás</button>
-  </nav>
-</header>
-
-<main>
-<section id="story" class="tab active">
-  <div class="card scene active">
-    <p class="eyebrow">Lk 5:1</p>
-    <p class="text">A sokaság Jézushoz tódult, és hallgatta Isten igéjét.</p>
-  </div>
-  <div class="card scene">
-    <p class="eyebrow">Lk 5:2</p>
-    <p class="text">A parton két hajó állt, a halászok hálóikat mosták.</p>
-  </div>
-  <div class="card scene">
-    <p class="eyebrow">Lk 5:4</p>
-    <p class="text">Jézus megszólította Pétert: „Evezz a mélyre.”</p>
-    <div class="choices">
-      <button class="bad">Most nincs értelme</button>
-      <button class="bad">Egész éjjel próbáltuk</button>
-      <button class="good">A te szavadra</button>
-    </div>
-    <p class="hint"></p>
-  </div>
-  <div class="card scene">
-    <p class="eyebrow">Lk 5:6–8</p>
-    <p class="text">A hálók megteltek. Péter megrendült.</p>
-  </div>
-  <div class="card scene">
-    <p class="eyebrow">Lk 5:10–11</p>
-    <p class="text">„Ne félj… mostantól embereket fogsz halászni.”</p>
-  </div>
-  <div class="controls">
-    <button id="prev">◀</button>
-    <button id="next">▶</button>
-  </div>
-</section>
-
-<section id="fish" class="tab">
-  <div class="card">
-    <p class="text">Húzd az igét ahhoz az emberhez, akit megszólít.</p>
-    <div class="fish-grid">
-      <div class="verse" draggable="true">Ne félj</div>
-      <div class="person">Félelemmel élő</div>
-      <div class="person">Kereső</div>
-    </div>
-    <p id="fishMsg" class="hint"></p>
-  </div>
-</section>
-
-<section id="learn" class="tab">
-  <div class="card">
-    <p class="text">Rendezd sorrendbe a történet ívét.</p>
-    <div id="order" class="dd"></div>
-    <p id="orderMsg" class="hint"></p>
-  </div>
-  <div class="card">
-    <p class="text">Mit hagy ott Péter?</p>
-    <div class="dd split">
-      <div id="left">
-        <div draggable="true">Biztonság</div>
-        <div draggable="true">Kontroll</div>
-        <div draggable="true">Megélhetés</div>
+  <div class="app-shell">
+    <header class="topbar reveal">
+      <div class="brand-wrap">
+        <div class="brand-icon">🎣</div>
+        <div>
+          <p class="eyebrow">Prototípus 2.1 · modern bibliai játékélmény</p>
+          <h1>Emberhalászat – Lukács 5:1–11</h1>
+        </div>
       </div>
-      <div id="right">Otthagyja</div>
-    </div>
-  </div>
-</section>
-</main>
-</div>
+      <div class="top-actions">
+        <button class="ghost-btn small" id="soundToggleBtn" type="button" aria-pressed="true">🔊 Hang: be</button>
+        <button class="ghost-btn small" id="resetProgressBtn" type="button">Haladás törlése</button>
+      </div>
+    </header>
 
-<script src="js/app.js"></script>
+    <main>
+      <section class="screen active" id="screen-menu">
+        <div class="hero-card card glass reveal">
+          <div class="hero-copy">
+            <span class="pill">Lukács 5:1–11 · modern, képes, mobilbarát</span>
+            <h2>Három egymásra épülő játékmód egy teljes történetívben</h2>
+            <p>
+              A játékcsomag célja, hogy Péter elhívását ne csak elolvasd, hanem <strong>átéld</strong>:
+              először megtapasztalod az „emberhalászat” képet, aztán végigjárod a teljes történetet,
+              végül alkalmazod a tanulságokat valódi döntési helyzetekben.
+            </p>
+            <div class="hero-actions">
+              <button class="primary-btn shimmer" data-go="fishing">Indítás</button>
+              <button class="ghost-btn" data-go="story">Történet megnyitása</button>
+            </div>
+          </div>
+          <div class="hero-illustration" aria-hidden="true">
+            <div class="sun-glow"></div>
+            <div class="hero-boat">⛵</div>
+            <div class="hero-wave wave-1"></div>
+            <div class="hero-wave wave-2"></div>
+            <div class="hero-wave wave-3"></div>
+            <div class="hero-person p1">🧍</div>
+            <div class="hero-person p2">🧍‍♀️</div>
+            <div class="hero-person p3">🧒</div>
+            <div class="hero-spark s1">✦</div>
+            <div class="hero-spark s2">✦</div>
+            <div class="hero-spark s3">✦</div>
+          </div>
+        </div>
+
+        <div class="menu-grid reveal delay-1">
+          <article class="card mode-card">
+            <div class="icon-badge fishing">🎯</div>
+            <div>
+              <h3>1. Emberhalászat – küldetésjáték</h3>
+              <p>Dobd ki a hálót mozgó emberekre. Minden sikeres elérés után rövid evangéliumi üzenet és igehely jelenik meg.</p>
+            </div>
+            <button class="primary-btn" data-go="fishing">Játék indítása</button>
+          </article>
+
+          <article class="card mode-card">
+            <div class="icon-badge story">📖</div>
+            <div>
+              <h3>2. Képes interaktív történet</h3>
+              <p>Lukács 5:1–11 teljes története jelenetről jelenetre, illusztrációkkal, Jézus és Péter válaszaival.</p>
+            </div>
+            <button class="primary-btn" data-go="story">Történet indítása</button>
+          </article>
+
+          <article class="card mode-card">
+            <div class="icon-badge lesson">🧭</div>
+            <div>
+              <h3>3. Tanulság-labor</h3>
+              <p>Sorrendrakó, döntési helyzetek és elhívás-műhely. Több hozzáadott érték, jobban feldolgozható tanulságokkal.</p>
+            </div>
+            <button class="primary-btn" data-go="lesson">Labor megnyitása</button>
+          </article>
+        </div>
+
+        <section class="card progress-card reveal delay-2">
+          <div>
+            <p class="eyebrow">Játékos útvonal</p>
+            <h3>Haladás</h3>
+          </div>
+          <div class="progress-steps" id="menuProgressSteps"></div>
+        </section>
+      </section>
+
+      <section class="screen" id="screen-fishing">
+        <div class="screen-header reveal">
+          <button class="back-btn" data-go="menu">← Menü</button>
+          <div>
+            <p class="eyebrow">1. játékmód</p>
+            <h2>Emberhalászat – elérés, nem puszta gyűjtés</h2>
+          </div>
+        </div>
+
+        <div class="two-col reveal delay-1">
+          <div class="card gameplay-card">
+            <div class="hud-row four">
+              <div class="stat glow"><span>Idő</span><strong id="fishingTime">35</strong></div>
+              <div class="stat glow"><span>Elért emberek</span><strong id="fishingScore">0</strong></div>
+              <div class="stat glow"><span>Kombó</span><strong id="fishingCombo">x1</strong></div>
+              <div class="stat glow"><span>Küldetés</span><strong id="fishingGoal">12</strong></div>
+            </div>
+
+            <div class="fishing-arena" id="fishingArena" aria-label="Galileai-tó játéktér">
+              <div class="bubble-layer" id="bubbleLayer"></div>
+              <div class="boat-track">
+                <div class="boat-sprite" id="boatSprite">🚤</div>
+              </div>
+              <div class="drop-line" id="dropLine"></div>
+              <div class="net-effect" id="netEffect">🕸️</div>
+              <div class="impact-ring" id="impactRing"></div>
+              <div class="water-hint">Időzítsd a hálót, és érd el a mozgó embereket a vízen! A siker után rövid evangéliumi üzenet jelenik meg.</div>
+            </div>
+
+            <div class="controls-row">
+              <button class="primary-btn big shimmer" id="castNetBtn" type="button">Háló dobása</button>
+              <button class="ghost-btn" id="restartFishingBtn" type="button">Újra</button>
+            </div>
+          </div>
+
+          <aside class="card sidebar-card floating">
+            <div class="teaching-card premium" id="teachingCard">
+              <p class="eyebrow">Evangéliumi üzenet</p>
+              <p id="teachingText">A játék során minden elért ember után rövid, alkalmazható igei üzenet jelenik meg.</p>
+              <div class="verse-ref" id="teachingRef">Kezdd el a játékot</div>
+            </div>
+            <div class="mini-note">
+              <p class="eyebrow">Miért jobb ez a játékmód?</p>
+              <p>Itt már nem absztrakt szíveket gyűjtesz, hanem <strong>embereket érsz el</strong>. A hangsúly azon van, hogy Jézus követőjeként az emberek felé fordulunk.</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="overlay hidden" id="fishingEndOverlay">
+          <div class="card overlay-card celebrate">
+            <span class="pill">Játékkör vége</span>
+            <h3 id="fishingEndTitle">Szép küldetés!</h3>
+            <p id="fishingEndSummary"></p>
+            <div class="overlay-actions">
+              <button class="primary-btn shimmer" id="fishingContinueBtn" type="button">Tovább a történethez</button>
+              <button class="ghost-btn" id="fishingReplayBtn" type="button">Újrajátszás</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-story">
+        <div class="screen-header reveal">
+          <button class="back-btn" data-go="menu">← Menü</button>
+          <div>
+            <p class="eyebrow">2. játékmód</p>
+            <h2>Képes interaktív történet – Lukács 5:1–11 teljes ívben</h2>
+          </div>
+        </div>
+
+        <div class="story-shell reveal delay-1">
+          <div class="card story-visual-card">
+            <div class="story-progress sticky-top">
+              <span id="storyStepLabel">Jelenet 1 / 9</span>
+              <div class="progress-bar"><div id="storyProgressFill"></div></div>
+            </div>
+            <div class="story-visual" id="storyVisual"></div>
+          </div>
+
+          <div class="card story-card">
+            <div class="dialogue-box big">
+              <div class="avatar Jesus" id="storyAvatar">J</div>
+              <div class="bubble">
+                <p class="speaker" id="storySpeaker">Jézus</p>
+                <p id="storyText"></p>
+              </div>
+            </div>
+            <div class="verse-chip" id="storyVerseChip">Lk 5</div>
+            <div class="feedback hidden" id="storyFeedback"></div>
+            <div class="choices" id="storyChoices"></div>
+          </div>
+        </div>
+
+        <div class="overlay hidden" id="storyEndOverlay">
+          <div class="card overlay-card celebrate">
+            <span class="pill">Történet vége</span>
+            <h3>Jézus nemcsak csodát adott, hanem elhívást is</h3>
+            <p>A történet végén Péter, Jakab és János mindent ott hagyva követték Jézust. Innen indul az „emberhalászat” valódi jelentése.</p>
+            <div class="overlay-actions">
+              <button class="primary-btn shimmer" id="storyContinueBtn" type="button">Tovább a Tanulság-laborba</button>
+              <button class="ghost-btn" id="storyMenuBtn" type="button">Menü</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="screen-lesson">
+        <div class="screen-header reveal">
+          <button class="back-btn" data-go="menu">← Menü</button>
+          <div>
+            <p class="eyebrow">3. játékmód</p>
+            <h2>Tanulság-labor – több hozzáadott érték, mélyebb feldolgozás</h2>
+          </div>
+        </div>
+
+        <div class="card lesson-card reveal delay-1">
+          <div class="story-progress lesson-progress">
+            <span id="lessonStepLabel">Feladat 1 / 4</span>
+            <div class="progress-bar"><div id="lessonProgressFill"></div></div>
+          </div>
+          <div id="lessonStage"></div>
+          <div class="lesson-actions">
+            <button class="ghost-btn" id="restartLessonBtn" type="button">Újrakezdés</button>
+          </div>
+        </div>
+
+        <div class="overlay hidden" id="lessonEndOverlay">
+          <div class="card overlay-card celebrate">
+            <span class="pill">Befejezted</span>
+            <h3>Feldolgoztad a történet lényegét</h3>
+            <p id="lessonEndSummary"></p>
+            <div class="overlay-actions">
+              <button class="primary-btn shimmer" id="lessonMenuBtn" type="button">Vissza a menübe</button>
+              <button class="ghost-btn" id="lessonReplayBtn" type="button">Újrajátszás</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
