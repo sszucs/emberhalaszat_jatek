@@ -1,46 +1,26 @@
-# Emberhalászat 2.1 – GitHub Pages csomag
+# Lukács 5 – Felnőtt feldolgozó modul
 
-Ez a **2.1-es, továbbfejlesztett** verzió már közelebb áll egy mai, profi játékélményhez:
-- modernebb UI / UX
-- mobil + desktop optimalizálás
-- fejlesztett 1. játékmód (embereket ér el Péter, nem szíveket gyűjt)
-- képes, teljes történetívre épülő 2. játékmód Lukács 5:1–11 alapján
-- több hozzáadott értékű 3. játékmód (Tanulság-labor)
+Ez a modul **kifejezetten felnőtteknek** készült.
 
-## Fájlszerkezet
-```text
-/
-├── index.html
-├── .nojekyll
-├── README.md
-├── css/
-│   └── style.css
-└── js/
-    └── script.js
-```
+Nem kvíz. Nem ifjúsági játék. Nem pontoz.
 
-## Feltöltés GitHub Pages-re
-A repository gyökerében ez jelenjen meg:
-- `index.html`
-- `.nojekyll`
-- `README.md`
-- `css/`
-- `js/`
+Célja:
+- a történet belső logikájának megértése
+- személyes és közösségi reflexió
+- vezetett, de nem manipuláló feldolgozás
 
-### Lépések
-1. Hozz létre egy **public** repositoryt (például: `lukacs5-jatek`).
-2. A ZIP kicsomagolt **tartalmát** töltsd fel a repo gyökerébe.
-3. GitHubon: **Settings → Pages**.
-4. Állítsd be:
-   - **Source**: `Deploy from a branch`
-   - **Branch**: `main`
-   - **Folder**: `/(root)`
-5. Pár perc múlva működni fog a link.
+## Tartalom
+1. Értelmi sorrendbe tétel (drag & click)
+2. A fordulópont értelmezése
+3. Személyes helyzet felismerése
+4. Alkalmazás felnőtt élethelyzetekre
 
-## Fontos
-A `css` és `js` mappák **mappaként** maradjanak meg.
-Az `index.html` ezekre így hivatkozik:
-- `css/style.css`
-- `js/script.js`
+## Használat
+Nyisd meg az `index.html` fájlt böngészőben.
+Mobilon és asztali gépen egyaránt működik.
 
-Tehát nem kell a CSS és JS fájlt a rootba átrakni.
+Ajánlott:
+- bibliakör
+- lelkigondozás
+- vezetőképzés
+- személyes elcsendesedés
