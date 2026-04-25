@@ -1,39 +1,46 @@
-# Emberhalászat – Lukács 5:1–11 (GitHub Pages csomag)
+# Emberhalászat 2.1 – GitHub Pages csomag
 
-Mobilbarát, statikus HTML/CSS/JS játékcsomag Lukács 5:1–11 alapján.
-
-## Tartalom
-- **1. játékmód – Emberhalászat**: időzített hálódobás, fogások, rövid tanítások
-- **2. játékmód – Interaktív történet**: Péter döntései Jézus szavára
-- **3. játékmód – Tanulság-kihívások**: „Ne félj”, hit, elhívás
+Ez a **2.1-es, továbbfejlesztett** verzió már közelebb áll egy mai, profi játékélményhez:
+- modernebb UI / UX
+- mobil + desktop optimalizálás
+- fejlesztett 1. játékmód (embereket ér el Péter, nem szíveket gyűjt)
+- képes, teljes történetívre épülő 2. játékmód Lukács 5:1–11 alapján
+- több hozzáadott értékű 3. játékmód (Tanulság-labor)
 
 ## Fájlszerkezet
 ```text
 /
 ├── index.html
 ├── .nojekyll
+├── README.md
 ├── css/
 │   └── style.css
 └── js/
     └── script.js
 ```
 
-## GitHub Pages telepítés
-1. Hozz létre egy új **public** repositoryt GitHubon (például `lukacs5-jatek`).
-2. Töltsd fel **ennek a csomagnak minden fájlját** a repository gyökerébe.
-3. A GitHubon menj ide: **Settings → Pages**.
-4. Válaszd ezt:
+## Feltöltés GitHub Pages-re
+A repository gyökerében ez jelenjen meg:
+- `index.html`
+- `.nojekyll`
+- `README.md`
+- `css/`
+- `js/`
+
+### Lépések
+1. Hozz létre egy **public** repositoryt (például: `lukacs5-jatek`).
+2. A ZIP kicsomagolt **tartalmát** töltsd fel a repo gyökerébe.
+3. GitHubon: **Settings → Pages**.
+4. Állítsd be:
    - **Source**: `Deploy from a branch`
    - **Branch**: `main`
    - **Folder**: `/(root)`
-5. Mentsd el, majd várj néhány percet.
-6. A kész link formája várhatóan:
-   - `https://felhasznalonev.github.io/lukacs5-jatek/`
+5. Pár perc múlva működni fog a link.
 
-## Testreszabás
-- A szövegek a `js/script.js` fájlban vannak.
-- A színek és UI elemek a `css/style.css` fájlban módosíthatók.
-- A játék statikus, backend nélkül működik.
+## Fontos
+A `css` és `js` mappák **mappaként** maradjanak meg.
+Az `index.html` ezekre így hivatkozik:
+- `css/style.css`
+- `js/script.js`
 
-## Tipp
-Ha csak egyszerű HTML/CSS/JS fájlokat használsz, ez a csomag közvetlenül működik GitHub Pages-en.
+Tehát nem kell a CSS és JS fájlt a rootba átrakni.
